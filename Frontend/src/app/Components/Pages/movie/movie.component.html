@@ -1,0 +1,36 @@
+<div *ngIf="movie" class="container">
+  <img [src]="movie.imgUrl" [alt]="movie.movieName"/>
+
+  <div class="details">
+    <div class="header">
+      <span class="name">
+        {{ movie.movieName }}
+      </span>
+    </div>
+    <!--<div class="rating">
+      <star-rating
+      [value]="food.stars"
+      [totalstars]="5"
+      checkedcolor="red"
+      uncheckedcolor="black"
+      size="25px"
+      [readonly]="true">
+    </star-rating>
+    </div>-->
+
+    <div class="tags">
+      <a routerLink="/tag/{{movie.tags}}">
+        {{ movie.tags }}
+      </a>
+    </div>
+
+    <div class="price">
+      <span>
+        {{ movie.price | currency: 'INR' }}
+      </span>
+    </div>
+
+    <button (click)="payment()">Go to Payment</button>
+
+  </div>
+</div>

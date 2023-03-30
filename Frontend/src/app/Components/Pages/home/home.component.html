@@ -1,0 +1,27 @@
+<app-search></app-search>
+<app-tags></app-tags>
+<app-carousel [images]="movies" [autoSlide]="true"></app-carousel>
+<ul>
+    <li *ngFor="let i of movies">
+        <a routerLink="/movie/{{i.movieId}}">
+            <img [src]="i.imgUrl" [alt]="i.movieName">
+            <div class="content">
+                <div class="name">
+                    {{ i.movieName }}
+                </div>
+                <div class="product-item-footer">
+                    <div class="price">
+                        <span>
+                          {{ i.price | currency : 'INR' }}
+                        </span>
+                    </div>
+                    <div>
+                        <span>
+                            {{ i.lang }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </li>
+</ul>
